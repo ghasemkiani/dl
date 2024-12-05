@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"/>
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+    </script>
+    <script type="module">
+      import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+      document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@400;500;700&display=swap');
+
+      :root {
+        --md-ref-typeface-brand: 'Montserrat';
+        --md-ref-typeface-plain: system-ui;
+        *zoom:2;
+      }
+    </style>
+  </head>
+  <body class="md-typescale-body-medium">
+    <main>
+      <article>
+        <h1 class="md-typescale-display-large">Hello Material!</h1>
+        <section>
+          <h2>Typography</h2>
+          <p class="md-typescale-body-small">A typescale is a collection of font styles: font-family, font-size, line-height, and font-weight. They are organized into roles that describe their purpose.</p>
+          <p class="md-typescale-body-medium">A typescale is a collection of font styles: font-family, font-size, line-height, and font-weight. They are organized into roles that describe their purpose.</p>
+          <p class="md-typescale-body-large">A typescale is a collection of font styles: font-family, font-size, line-height, and font-weight. They are organized into roles that describe their purpose.</p>
+        </section>
+        <section>
+          <h2>Buttons</h2>
+          <div>
+            <md-filled-button>
+              <span>Send</span>
+              <svg slot="icon" viewBox="0 0 48 48">
+                <path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z"/>
+              </svg>
+            </md-filled-button>
+            <md-outlined-button trailing-icon="trailing-icon">
+              <span>Open</span>
+              <svg slot="icon" viewBox="0 0 48 48">
+                <path d="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h13.95v3H9v30h30V25.05h3V39q0 1.2-.9 2.1-.9.9-2.1.9Zm10.1-10.95L17 28.9 36.9 9H25.95V6H42v16.05h-3v-10.9Z"/>
+              </svg>
+            </md-outlined-button>
+          </div>
+        </section>
+        <section>
+          <h2>Checkboxes</h2>
+          <p>
+            <label style="display:flex;align-items:center">
+              <md-checkbox touch-target="wrapper"> </md-checkbox>
+              <span>Checkbox one</span>
+            </label>
+            <div style="display:flex;align-items:center">
+              <md-checkbox id="checkbox-two" touch-target="wrapper"> </md-checkbox>
+              <label for="checkbox-two">Checkbox two</label>
+            </div>
+          </p>
+        </section>
+        <section>
+          <h2>Chips</h2>
+          <md-chip-set>
+            <md-assist-chip label="Assist"> </md-assist-chip>
+            <md-filter-chip label="Filter"> </md-filter-chip>
+            <md-input-chip label="Input"> </md-input-chip>
+            <md-suggestion-chip label="Suggestion"> </md-suggestion-chip>
+          </md-chip-set>
+          <h3>New event</h3>
+          <md-chip-set>
+            <md-filter-chip label="All day"> </md-filter-chip>
+            <md-assist-chip label="Add to calendar"> </md-assist-chip>
+            <md-assist-chip label="Set a reminder"> </md-assist-chip>
+            <md-input-chip label="Set a reminder"> </md-input-chip>
+          </md-chip-set>
+          <h3 id="dates-label">Dates</h3>
+          <md-chip-set aria-labelledby="dates-label">
+            <md-filter-chip label="Mon" aria-label="Monday"> </md-filter-chip>
+            <md-filter-chip label="Tue" aria-label="Tuesday"> </md-filter-chip>
+            <md-filter-chip label="Wed" aria-label="Wednesday"> </md-filter-chip>
+          </md-chip-set>
+        </section>
+        <section>
+          <h2>Dialogs</h2>
+          <md-dialog type="alert" id="dialog1">
+            <div slot="headline">Dialog title</div>
+            <form slot="content" id="form-id" method="dialog">A simple dialog with free-form content.</form>
+            <div slot="actions">
+              <md-filled-button form="form-id" value="ok">Ok</md-filled-button>
+              <md-outlined-button form="form-id" value="cancel">Cancel</md-outlined-button>
+            </div>
+          </md-dialog>
+          <p>
+            <md-text-button onclick='document.querySelector("#dialog1").show()'>Show...</md-text-button>
+          </p>
+        </section>
+        <section>
+          <h2>FAB</h2>
+          <div style="height:5cm;">
+            <md-fab aria-label="Edit">
+              <md-icon slot="icon">E</md-icon>
+            </md-fab>
+          </div>
+        </section>
+        <section>
+          <h2>Old Content</h2>
+          <p class="md-typescale-body-medium">Check out these controls in a form!</p>
+          <form id="oldform">
+            <div>
+              <label style="display:flex;align-items:center">
+                <md-checkbox touch-target="wrapper"> </md-checkbox>
+                <span>Check here!</span>
+              </label>
+            </div>
+            <div style="display:flex;align-items:center;gap:30px;">
+              <label style="display:flex;align-items:center;">
+                <md-radio name="group"> </md-radio>
+                <span>  1</span>
+              </label>
+              <label style="display:flex;align-items:center">
+                <md-radio name="group"> </md-radio>
+                <span>  2</span>
+              </label>
+              <label style="display:flex;align-items:center">
+                <md-radio name="group"> </md-radio>
+                <span>  3</span>
+              </label>
+            </div>
+            <md-outlined-text-field label="Favorite color" value="Purple"/>
+            <md-outlined-button type="reset">Reset</md-outlined-button>
+          </form>
+          <style>
+            form#oldform {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 16px;
+            }
+          </style>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
